@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/a-propos', [PublicController::class, 'about'])->name('about');
 Route::get('/services', [PublicController::class, 'services'])->name('services');
+Route::get('/livraison', [PublicController::class, 'livraison'])->name('livraison');
 Route::get('/pharmacies', [PublicController::class, 'pharmacies'])->name('pharmacies');
 Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
 Route::post('/contact', [PublicController::class, 'contactEnvoyer'])->name('contact.envoyer');

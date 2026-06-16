@@ -2,8 +2,8 @@
     <div class="container">
         <div class="cols">
             <div>
-                <div class="brand" style="color:#fff; margin-bottom:12px">
-                    <span class="leaf">✚</span> Fura<span style="color:#93C5FD">so</span>
+                <div class="footer-logo">
+                    <img src="{{ asset('images/logo.jpg') }}" alt="Furaso — la maison du remède">
                 </div>
                 <p>Vos médicaments, simplement et en toute sécurité. La pharmacie en ligne pensée pour le Mali.</p>
             </div>
@@ -12,6 +12,7 @@
                 <a href="{{ route('home') }}">Accueil</a>
                 <a href="{{ route('catalogue.index') }}">Catalogue</a>
                 <a href="{{ route('services') }}">Services</a>
+                <a href="{{ route('livraison') }}">Livraison</a>
                 <a href="{{ route('pharmacies') }}">Pharmacies</a>
             </div>
             <div>

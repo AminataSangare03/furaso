@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Medicament;
 use App\Models\Pharmacie;
 use App\Models\User;
+use App\Services\LivraisonService;
 use App\Services\NotificationService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -28,6 +29,16 @@ class PublicController extends Controller
     public function services(): View
     {
         return view('public.services');
+    }
+
+    public function livraison(): View
+    {
+        return view('public.livraison', [
+            'zones' => LivraisonService::zones(),
+            'creneaux' => LivraisonService::creneaux(),
+            'seuilGratuit' => LivraisonService::SEUIL_LIVRAISON_GRATUITE,
+            'modesPaiement' => LivraisonService::modesPaiement(),
+        ]);
     }
 
     public function pharmacies(): View

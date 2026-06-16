@@ -25,12 +25,34 @@
 
     <div>
         <div class="card card-pad mb">
-            <h3 class="mb">Livraison</h3>
+            <h3 class="mb">Suivi de la livraison</h3>
+            @php
+                $etapes = ['confirmee'=>'Confirmée','preparee'=>'En préparation','expediee'=>'Livreur en route','livree'=>'Livrée'];
+                $ordre = ['en_attente'=>0,'confirmee'=>1,'preparee'=>2,'expediee'=>3,'livree'=>4,'annulee'=>-1];
+                $courant = $ordre[$commande->statut] ?? 0;
+            @endphp
+            @if($commande->statut === 'annulee')
+                <p><span class="pill pill-red">Commande annulée</span></p>
+            @else
+                <ul class="suivi">
+                    @foreach($etapes as $cle => $libelle)
+                        @php($niveau = $ordre[$cle])
+                        <li class="{{ $courant >= $niveau ? 'done' : '' }}">{{ $libelle }}</li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
+        <div class="card card-pad mb">
+            <h3 class="mb">Détails de livraison</h3>
             <p class="muted">📍 {{ $commande->adresse_livraison }}</p>
             <p class="muted">🏙️ Zone : {{ $commande->zone_livraison }}</p>
+            <p class="muted">🕒 Créneau : {{ \App\Services\LivraisonService::creneauLibelle($commande->creneau) }}</p>
             <p class="muted">⏱️ Délai estimé : {{ \App\Services\LivraisonService::delaiPour($commande->zone_livraison) }}</p>
-            @if($commande->livraison)
-                <p class="mt"><span class="pill pill-blue">{{ ucfirst(str_replace('_',' ',$commande->livraison->statut)) }}</span></p>
+            @if($commande->livraison && $commande->livraison->date_livraison_prevue)
+                <p class="muted">📅 Arrivée prévue : {{ $commande->livraison->date_livraison_prevue->format('d/m/Y à H:i') }}</p>
+            @endif
+            @if($commande->livraison && $commande->livraison->livreur)
+                <p class="muted">🛵 Livreur : <strong>{{ $commande->livraison->livreur }}</strong>@if($commande->livraison->livreur_telephone) — {{ $commande->livraison->livreur_telephone }}@endif</p>
             @endif
         </div>
         <div class="card card-pad mb">

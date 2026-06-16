@@ -36,9 +36,12 @@ class CommandeController extends Controller
     {
         $data = $request->validate([
             'statut' => ['required', 'in:en_attente,confirmee,preparee,expediee,livree,annulee'],
+            'livreur' => ['nullable', 'string', 'max:255'],
+            'livreur_telephone' => ['nullable', 'string', 'max:255'],
+            'date_livraison_prevue' => ['nullable', 'date'],
         ]);
 
-        $commande->update($data);
+        $commande->update(['statut' => $data['statut']]);
 
         // Synchronise le statut de livraison.
         if ($commande->livraison) {
@@ -49,6 +52,9 @@ class CommandeController extends Controller
             };
             $commande->livraison->update([
                 'statut' => $statutLivraison,
+                'livreur' => $data['livreur'] ?? $commande->livraison->livreur,
+                'livreur_telephone' => $data['livreur_telephone'] ?? $commande->livraison->livreur_telephone,
+                'date_livraison_prevue' => $data['date_livraison_prevue'] ?? $commande->livraison->date_livraison_prevue,
                 'date_livraison' => $data['statut'] === 'livree' ? now() : $commande->livraison->date_livraison,
             ]);
         }

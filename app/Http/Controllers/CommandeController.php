@@ -40,6 +40,8 @@ class CommandeController extends Controller
             'total' => $this->panier->total(),
             'contientOrdonnance' => $this->panier->contientOrdonnance(),
             'zones' => LivraisonService::zones(),
+            'creneaux' => LivraisonService::creneaux(),
+            'seuilGratuit' => LivraisonService::SEUIL_LIVRAISON_GRATUITE,
             'modesPaiement' => LivraisonService::modesPaiement(),
             'ordonnancesValidees' => $ordonnancesValidees,
             'pharmacies' => Pharmacie::where('partenaire', true)->get(),
@@ -56,6 +58,7 @@ class CommandeController extends Controller
 
         $data = $request->validate([
             'zone_livraison' => ['required', 'string'],
+            'creneau' => ['required', 'in:express,journee,soir,programme'],
             'adresse_livraison' => ['required', 'string', 'max:255'],
             'mode_paiement' => ['required', 'in:livraison,orange_money,moov_money,carte'],
             'pharmacie_id' => ['nullable', 'exists:pharmacies,id'],
@@ -71,8 +74,8 @@ class CommandeController extends Controller
             return back()->with('error', 'Votre panier contient des médicaments sous ordonnance. Sélectionnez une ordonnance validée.')->withInput();
         }
 
-        $frais = LivraisonService::fraisPour($data['zone_livraison']);
         $total = $this->panier->total();
+        $frais = LivraisonService::fraisAvecSeuil($data['zone_livraison'], $total);
 
         $commande = DB::transaction(function () use ($lignes, $patient, $data, $frais, $total) {
             $commande = Commande::create([
@@ -85,6 +88,7 @@ class CommandeController extends Controller
                 'mode_paiement' => $data['mode_paiement'],
                 'adresse_livraison' => $data['adresse_livraison'],
                 'zone_livraison' => $data['zone_livraison'],
+                'creneau' => $data['creneau'],
             ]);
 
             foreach ($lignes as $ligne) {

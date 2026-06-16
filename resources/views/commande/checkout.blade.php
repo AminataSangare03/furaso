@@ -27,9 +27,22 @@
                                 </optgroup>
                             </select>
                         </div>
+                        @if($total < $seuilGratuit)
+                            <p class="help mb">🚚 Livraison <strong>offerte</strong> dès {{ number_format($seuilGratuit,0,',',' ') }} FCFA d'achat (il vous manque {{ number_format($seuilGratuit - $total,0,',',' ') }} FCFA).</p>
+                        @else
+                            <div class="alert alert-success mb">🎉 Votre livraison est <strong>gratuite</strong> !</div>
+                        @endif
+                        <div class="form-group">
+                            <label>Créneau de livraison</label>
+                            <select name="creneau" required>
+                                @foreach($creneaux as $cle => $libelle)
+                                    <option value="{{ $cle }}" @selected(old('creneau')===$cle || ($loop->first && ! old('creneau')))>{{ $libelle }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label>Adresse de livraison</label>
-                            <input type="text" name="adresse_livraison" value="{{ old('adresse_livraison', trim(($user->adresse ?? '').' '.($user->quartier ?? ''))) }}" placeholder="Rue, quartier, ville" required>
+                            <input type="text" name="adresse_livraison" value="{{ old('adresse_livraison', trim(($user->adresse ?? '').' '.($user->quartier ?? ''))) }}" placeholder="Rue, quartier, point de repère" required>
                         </div>
                     </div>
 
@@ -93,12 +106,14 @@
 
 <script>
     const base = {{ (int) $total }};
+    const seuil = {{ (int) $seuilGratuit }};
     const zone = document.getElementById('zone');
     function maj() {
         const opt = zone.options[zone.selectedIndex];
-        const frais = parseInt(opt.dataset.frais || 0);
+        let frais = parseInt(opt.dataset.frais || 0);
         const delai = opt.dataset.delai || '—';
-        document.getElementById('frais').textContent = frais.toLocaleString('fr-FR') + ' FCFA';
+        if (base >= seuil) frais = 0;
+        document.getElementById('frais').textContent = frais === 0 ? 'Gratuite' : frais.toLocaleString('fr-FR') + ' FCFA';
         document.getElementById('delai').textContent = delai;
         document.getElementById('total').textContent = (base + frais).toLocaleString('fr-FR') + ' FCFA';
     }

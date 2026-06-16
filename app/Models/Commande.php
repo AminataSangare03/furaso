@@ -14,7 +14,7 @@ class Commande extends Model
     protected $fillable = [
         'patient_id', 'pharmacie_id', 'ordonnance_id', 'montant_total',
         'frais_livraison', 'statut', 'mode_paiement', 'adresse_livraison',
-        'zone_livraison',
+        'zone_livraison', 'creneau',
     ];
 
     protected $casts = [

@@ -30,11 +30,24 @@
             <form method="POST" action="{{ route('pharmacien.commandes.statut', $commande) }}">
                 @csrf @method('PUT')
                 <div class="form-group">
+                    <label>Statut</label>
                     <select name="statut">
                         @foreach(['en_attente'=>'En attente','confirmee'=>'Confirmée','preparee'=>'Préparée','expediee'=>'Expédiée','livree'=>'Livrée','annulee'=>'Annulée'] as $cle=>$lib)
                             <option value="{{ $cle }}" @selected($commande->statut===$cle)>{{ $lib }}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-group">
+                    <label>Livreur (nom)</label>
+                    <input type="text" name="livreur" value="{{ $commande->livraison->livreur ?? '' }}" placeholder="Nom du livreur">
+                </div>
+                <div class="form-group">
+                    <label>Téléphone du livreur</label>
+                    <input type="text" name="livreur_telephone" value="{{ $commande->livraison->livreur_telephone ?? '' }}" placeholder="+223 ...">
+                </div>
+                <div class="form-group">
+                    <label>Heure de livraison prévue</label>
+                    <input type="datetime-local" name="date_livraison_prevue" value="{{ optional($commande->livraison->date_livraison_prevue ?? null)->format('Y-m-d\TH:i') }}">
                 </div>
                 <button class="btn btn-primary btn-block" type="submit">Mettre à jour</button>
             </form>

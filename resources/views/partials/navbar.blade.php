@@ -8,6 +8,7 @@
             <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Accueil</a>
             <a href="{{ route('catalogue.index') }}" class="{{ request()->routeIs('catalogue.*') ? 'active' : '' }}">Catalogue</a>
             <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'active' : '' }}">Services</a>
+            <a href="{{ route('livraison') }}" class="{{ request()->routeIs('livraison') ? 'active' : '' }}">Livraison</a>
             <a href="{{ route('pharmacies') }}" class="{{ request()->routeIs('pharmacies') ? 'active' : '' }}">Pharmacies</a>
             <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">À propos</a>
             <a href="{{ route('faq') }}" class="{{ request()->routeIs('faq') ? 'active' : '' }}">FAQ</a>

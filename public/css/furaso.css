@@ -46,6 +46,15 @@ img { max-width: 100%; }
 .brand span.bleu { color: var(--bleu); }
 .brand-logo { height: 46px; width: auto; display: block; }
 .auth-logo { height: 70px; width: auto; }
+.footer-logo { display: inline-block; background: #fff; padding: 8px 12px; border-radius: 10px; margin-bottom: 14px; }
+.footer-logo img { height: 42px; width: auto; display: block; }
+.suivi { list-style: none; padding: 0; margin: 0; }
+.suivi li { position: relative; padding: 0 0 18px 28px; color: var(--gris); border-left: 2px solid var(--gris-clair); }
+.suivi li:last-child { border-left: 2px solid transparent; padding-bottom: 0; }
+.suivi li::before { content: ''; position: absolute; left: -8px; top: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2px solid var(--gris-clair); }
+.suivi li.done { color: var(--texte); font-weight: 600; }
+.suivi li.done { border-left-color: var(--vert); }
+.suivi li.done::before { background: var(--vert); border-color: var(--vert); }
 .nav-links { display: flex; gap: 6px; margin-left: auto; align-items: center; flex-wrap: wrap; }
 .nav-links a { color: var(--texte); padding: 8px 12px; border-radius: 8px; font-weight: 500; }
 .nav-links a:hover { background: var(--vert-clair); color: var(--vert-fonce); text-decoration: none; }
