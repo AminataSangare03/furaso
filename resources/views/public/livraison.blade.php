@@ -6,7 +6,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = {
-        corePlugins: { preflight: false },
+        corePlugins: { preflight: false, container: false },
         theme: {
             extend: {
                 colors: {
