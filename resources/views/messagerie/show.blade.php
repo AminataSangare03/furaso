@@ -2,8 +2,8 @@
 @section('title', 'Discussion avec '.$interlocuteur->nom_complet)
 
 @section('content')
-<a href="{{ route('messagerie.index') }}" class="muted">← Toutes les conversations</a>
-<h1 class="mt">{{ auth()->user()->isPatient() ? '👨‍⚕️' : '👤' }} {{ $interlocuteur->nom_complet }}</h1>
+<a href="{{ route('messagerie.index') }}" class="muted icon-i"><i data-lucide="arrow-left"></i> Toutes les conversations</a>
+<h1 class="mt icon-i">@if(auth()->user()->isPatient())<i class="fa-solid fa-user-doctor"></i>@else<i data-lucide="user"></i>@endif {{ $interlocuteur->nom_complet }}</h1>
 <p class="page-sub">{{ ucfirst($interlocuteur->role) }}</p>
 
 <div class="card chat-thread">

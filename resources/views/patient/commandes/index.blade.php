@@ -6,7 +6,7 @@
 <p class="page-sub">Historique et suivi de vos commandes.</p>
 
 @if($commandes->isEmpty())
-    <div class="empty"><div class="ico">📦</div><p>Aucune commande.</p><a href="{{ route('catalogue.index') }}" class="btn btn-primary mt">Commander</a></div>
+    <div class="empty"><div class="ico"><i data-lucide="package"></i></div><p>Aucune commande.</p><a href="{{ route('catalogue.index') }}" class="btn btn-primary mt">Commander</a></div>
 @else
     <div class="card table-wrap">
         <table class="data">

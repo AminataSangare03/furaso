@@ -2,7 +2,7 @@
 @section('title', 'Ordonnance #'.$ordonnance->id)
 
 @section('content')
-<a href="{{ route('pharmacien.ordonnances.index') }}" class="muted">← Retour</a>
+<a href="{{ route('pharmacien.ordonnances.index') }}" class="muted"><i data-lucide="arrow-left"></i> Retour</a>
 <h1 class="mt">Ordonnance #{{ $ordonnance->id }}</h1>
 <p class="page-sub">Patient : {{ $ordonnance->patient->user->nom_complet ?? '—' }}</p>
 
@@ -10,7 +10,7 @@
     <div class="card card-pad">
         <h3 class="mb">Document</h3>
         @if($ordonnance->type === 'pdf')
-            <a href="{{ asset('storage/'.$ordonnance->fichier) }}" target="_blank" class="btn btn-secondary">📄 Ouvrir le PDF</a>
+            <a href="{{ asset('storage/'.$ordonnance->fichier) }}" target="_blank" class="btn btn-secondary"><i data-lucide="file-text"></i> Ouvrir le PDF</a>
         @else
             <img src="{{ asset('storage/'.$ordonnance->fichier) }}" alt="Ordonnance" style="border-radius:9px;border:1px solid var(--gris-clair)">
         @endif

@@ -2,7 +2,7 @@
 @section('title', 'Commande #'.$commande->id)
 
 @section('content')
-<a href="{{ route('pharmacien.commandes.index') }}" class="muted">← Retour</a>
+<a href="{{ route('pharmacien.commandes.index') }}" class="muted"><i data-lucide="arrow-left"></i> Retour</a>
 <h1 class="mt">Commande #{{ $commande->id }}</h1>
 <p class="page-sub">Patient : {{ $commande->patient->user->nom_complet ?? '—' }} · {{ $commande->created_at->format('d/m/Y H:i') }}</p>
 
@@ -20,7 +20,7 @@
         <div class="flex between mt"><span class="muted">Livraison ({{ $commande->zone_livraison }})</span><strong>{{ number_format($commande->frais_livraison,0,',',' ') }} FCFA</strong></div>
         <div class="flex between mt"><span><strong>Total</strong></span><strong style="color:var(--vert)">{{ number_format($commande->montant_total,0,',',' ') }} FCFA</strong></div>
         @if($commande->ordonnance)
-            <p class="mt"><a href="{{ route('pharmacien.ordonnances.show', $commande->ordonnance) }}" class="btn btn-outline btn-sm">📄 Ordonnance liée #{{ $commande->ordonnance->id }}</a></p>
+            <p class="mt"><a href="{{ route('pharmacien.ordonnances.show', $commande->ordonnance) }}" class="btn btn-outline btn-sm"><i data-lucide="file-text"></i> Ordonnance liée #{{ $commande->ordonnance->id }}</a></p>
         @endif
     </div>
 
@@ -54,8 +54,8 @@
         </div>
         <div class="card card-pad">
             <h3 class="mb">Livraison & paiement</h3>
-            <p class="muted">📍 {{ $commande->adresse_livraison }}</p>
-            <p class="muted">💳 {{ \App\Services\LivraisonService::modesPaiement()[$commande->mode_paiement] ?? $commande->mode_paiement }}</p>
+            <p class="muted"><i data-lucide="map-pin"></i> {{ $commande->adresse_livraison }}</p>
+            <p class="muted"><i data-lucide="credit-card"></i> {{ \App\Services\LivraisonService::modesPaiement()[$commande->mode_paiement] ?? $commande->mode_paiement }}</p>
             @if($commande->paiement)<p class="mt"><span class="pill {{ $commande->paiement->statut==='paye'?'pill-green':'pill-yellow' }}">Paiement : {{ ucfirst($commande->paiement->statut) }}</span></p>@endif
         </div>
     </div>

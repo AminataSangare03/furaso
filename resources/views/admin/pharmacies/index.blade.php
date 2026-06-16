@@ -8,7 +8,7 @@
 </div>
 
 @if($pharmacies->isEmpty())
-    <div class="empty"><div class="ico">🏥</div><p>Aucune pharmacie.</p></div>
+    <div class="empty"><div class="ico"><i class="fa-solid fa-hospital"></i></div><p>Aucune pharmacie.</p></div>
 @else
     <div class="card table-wrap">
         <table class="data">

@@ -12,7 +12,7 @@
             @csrf @method('PUT')
             <div class="form-group text-center">
                 <div style="width:90px;height:90px;border-radius:50%;background:var(--vert-clair);color:var(--vert);display:grid;place-items:center;font-size:2rem;margin:0 auto 10px;overflow:hidden">
-                    @if($user->photo)<img src="{{ asset('storage/'.$user->photo) }}" style="width:100%;height:100%;object-fit:cover">@else 👤 @endif
+                    @if($user->photo)<img src="{{ asset('storage/'.$user->photo) }}" style="width:100%;height:100%;object-fit:cover">@else <i data-lucide="user"></i> @endif
                 </div>
                 <input type="file" name="photo" accept="image/*">
             </div>

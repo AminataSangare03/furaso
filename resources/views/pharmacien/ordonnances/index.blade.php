@@ -13,7 +13,7 @@
 </div>
 
 @if($ordonnances->isEmpty())
-    <div class="empty"><div class="ico">📄</div><p>Aucune ordonnance.</p></div>
+    <div class="empty"><div class="ico"><i data-lucide="file-text"></i></div><p>Aucune ordonnance.</p></div>
 @else
     <div class="card table-wrap">
         <table class="data">

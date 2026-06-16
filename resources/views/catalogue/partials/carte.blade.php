@@ -3,7 +3,7 @@
         @if($med->image)
             <img src="{{ asset('storage/'.$med->image) }}" alt="{{ $med->nom }}">
         @else
-            💊
+            <i class="fa-solid fa-pills"></i>
         @endif
     </div>
     <div class="body">
@@ -24,7 +24,7 @@
         @if($med->stock > 0 && ! $med->ordonnance_obligatoire)
             <form method="POST" action="{{ route('panier.ajouter', $med) }}">
                 @csrf
-                <button class="btn btn-primary btn-sm btn-block" type="submit">🛒 Ajouter</button>
+                <button class="btn btn-primary btn-sm btn-block" type="submit"><i data-lucide="shopping-cart"></i> Ajouter</button>
             </form>
         @endif
     </div>

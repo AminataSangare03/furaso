@@ -28,9 +28,9 @@
                             </select>
                         </div>
                         @if($total < $seuilGratuit)
-                            <p class="help mb">🚚 Livraison <strong>offerte</strong> dès {{ number_format($seuilGratuit,0,',',' ') }} FCFA d'achat (il vous manque {{ number_format($seuilGratuit - $total,0,',',' ') }} FCFA).</p>
+                            <p class="help mb"><i data-lucide="truck"></i> Livraison <strong>offerte</strong> dès {{ number_format($seuilGratuit,0,',',' ') }} FCFA d'achat (il vous manque {{ number_format($seuilGratuit - $total,0,',',' ') }} FCFA).</p>
                         @else
-                            <div class="alert alert-success mb">🎉 Votre livraison est <strong>gratuite</strong> !</div>
+                            <div class="alert alert-success mb"><i data-lucide="party-popper"></i> Votre livraison est <strong>gratuite</strong> !</div>
                         @endif
                         <div class="form-group">
                             <label>Créneau de livraison</label>

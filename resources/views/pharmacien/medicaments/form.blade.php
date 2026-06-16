@@ -2,7 +2,7 @@
 @section('title', $medicament->exists ? 'Modifier un médicament' : 'Ajouter un médicament')
 
 @section('content')
-<a href="{{ route('pharmacien.medicaments.index') }}" class="muted">← Retour</a>
+<a href="{{ route('pharmacien.medicaments.index') }}" class="muted"><i data-lucide="arrow-left"></i> Retour</a>
 <h1 class="mt">{{ $medicament->exists ? 'Modifier le médicament' : 'Ajouter un médicament' }}</h1>
 
 <div class="card card-pad" style="max-width:800px">

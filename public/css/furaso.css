@@ -55,6 +55,9 @@ img { max-width: 100%; }
 .suivi li.done { color: var(--texte); font-weight: 600; }
 .suivi li.done { border-left-color: var(--vert); }
 .suivi li.done::before { background: var(--vert); border-color: var(--vert); }
+.lucide { width: 1em; height: 1em; vertical-align: -0.125em; stroke-width: 2; display: inline-block; }
+.icon-i { display: inline-flex; align-items: center; gap: 6px; }
+.ico .lucide, .ico .fa-solid, .ico .fa-regular, .ico .fa-brands { font-size: inherit; }
 .nav-links { display: flex; gap: 6px; margin-left: auto; align-items: center; flex-wrap: wrap; }
 .nav-links a { color: var(--texte); padding: 8px 12px; border-radius: 8px; font-weight: 500; }
 .nav-links a:hover { background: var(--vert-clair); color: var(--vert-fonce); text-decoration: none; }

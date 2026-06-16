@@ -21,7 +21,7 @@
 </div>
 
 @if($users->isEmpty())
-    <div class="empty"><div class="ico">👥</div><p>Aucun utilisateur.</p></div>
+    <div class="empty"><div class="ico"><i data-lucide="users"></i></div><p>Aucun utilisateur.</p></div>
 @else
     <div class="card table-wrap">
         <table class="data">

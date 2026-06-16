@@ -6,16 +6,16 @@
 <p class="page-sub">Vue d'ensemble de la plateforme Furaso.</p>
 
 <div class="stats">
-    <div class="stat"><div class="ico">👥</div><div class="label">Utilisateurs</div><div class="value">{{ $nbUsers }}</div></div>
-    <div class="stat blue"><div class="ico">🧑</div><div class="label">Patients</div><div class="value">{{ $nbPatients }}</div></div>
-    <div class="stat"><div class="ico">👨‍⚕️</div><div class="label">Pharmaciens</div><div class="value">{{ $nbPharmaciens }}</div></div>
-    <div class="stat blue"><div class="ico">🏥</div><div class="label">Pharmacies</div><div class="value">{{ $nbPharmacies }}</div></div>
+    <div class="stat"><div class="ico"><i data-lucide="users"></i></div><div class="label">Utilisateurs</div><div class="value">{{ $nbUsers }}</div></div>
+    <div class="stat blue"><div class="ico"><i data-lucide="user"></i></div><div class="label">Patients</div><div class="value">{{ $nbPatients }}</div></div>
+    <div class="stat"><div class="ico"><i data-lucide="user"></i><i class="fa-solid fa-staff-snake"></i></div><div class="label">Pharmaciens</div><div class="value">{{ $nbPharmaciens }}</div></div>
+    <div class="stat blue"><div class="ico"><i class="fa-solid fa-hospital"></i></div><div class="label">Pharmacies</div><div class="value">{{ $nbPharmacies }}</div></div>
 </div>
 <div class="stats">
-    <div class="stat"><div class="ico">💊</div><div class="label">Médicaments</div><div class="value">{{ $nbMedicaments }}</div></div>
-    <div class="stat yellow"><div class="ico">📦</div><div class="label">Commandes</div><div class="value">{{ $nbCommandes }}</div></div>
-    <div class="stat"><div class="ico">💰</div><div class="label">Chiffre d'affaires</div><div class="value">{{ number_format($chiffreAffaires,0,',',' ') }}</div></div>
-    <div class="stat blue"><div class="ico">✅</div><div class="label">Paiements encaissés</div><div class="value">{{ number_format($paiementsPayes,0,',',' ') }}</div></div>
+    <div class="stat"><div class="ico"><i class="fa-solid fa-pills"></i></div><div class="label">Médicaments</div><div class="value">{{ $nbMedicaments }}</div></div>
+    <div class="stat yellow"><div class="ico"><i data-lucide="package"></i></div><div class="label">Commandes</div><div class="value">{{ $nbCommandes }}</div></div>
+    <div class="stat"><div class="ico"><i class="fa-solid fa-sack-dollar"></i></div><div class="label">Chiffre d'affaires</div><div class="value">{{ number_format($chiffreAffaires,0,',',' ') }}</div></div>
+    <div class="stat blue"><div class="ico"><i data-lucide="check-circle"></i></div><div class="label">Paiements encaissés</div><div class="value">{{ number_format($paiementsPayes,0,',',' ') }}</div></div>
 </div>
 
 <div class="grid grid-2">

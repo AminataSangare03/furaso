@@ -12,10 +12,10 @@
 <section class="section">
     <div class="container">
         <div class="grid grid-4">
-            <div class="card feature"><div class="ico">⚡</div><h3>Livraison le jour même</h3><p>30 min à 3h sur Bamako selon votre quartier.</p></div>
-            <div class="card feature bleu"><div class="ico">🎁</div><h3>Livraison gratuite</h3><p>Offerte dès {{ number_format($seuilGratuit,0,',',' ') }} FCFA d'achat.</p></div>
-            <div class="card feature"><div class="ico">📍</div><h3>Suivi en temps réel</h3><p>Suivez votre commande jusqu'à votre porte.</p></div>
-            <div class="card feature bleu"><div class="ico">💵</div><h3>Payez à la réception</h3><p>Espèces, Orange Money ou Moov Money.</p></div>
+            <div class="card feature"><div class="ico"><i data-lucide="zap"></i></div><h3>Livraison le jour même</h3><p>30 min à 3h sur Bamako selon votre quartier.</p></div>
+            <div class="card feature bleu"><div class="ico"><i data-lucide="gift"></i></div><h3>Livraison gratuite</h3><p>Offerte dès {{ number_format($seuilGratuit,0,',',' ') }} FCFA d'achat.</p></div>
+            <div class="card feature"><div class="ico"><i data-lucide="map-pin"></i></div><h3>Suivi en temps réel</h3><p>Suivez votre commande jusqu'à votre porte.</p></div>
+            <div class="card feature bleu"><div class="ico"><i data-lucide="banknote"></i></div><h3>Payez à la réception</h3><p>Espèces, Orange Money ou Moov Money.</p></div>
         </div>
     </div>
 </section>
@@ -50,7 +50,7 @@
                 @endforeach
             </tbody>
         </table>
-        <p class="help mt">💡 Livraison <strong>gratuite</strong> pour toute commande supérieure ou égale à {{ number_format($seuilGratuit,0,',',' ') }} FCFA, quelle que soit la zone.</p>
+        <p class="help mt"><i data-lucide="lightbulb"></i> Livraison <strong>gratuite</strong> pour toute commande supérieure ou égale à {{ number_format($seuilGratuit,0,',',' ') }} FCFA, quelle que soit la zone.</p>
     </div>
 </section>
 
@@ -61,7 +61,7 @@
         <div class="grid grid-2">
             @foreach($creneaux as $cle => $libelle)
                 <div class="card card-pad flex gap center">
-                    <div class="ico" style="width:48px;height:48px;border-radius:12px;background:var(--vert-clair);color:var(--vert);display:grid;place-items:center;font-size:1.4rem">🕒</div>
+                    <div class="ico" style="width:48px;height:48px;border-radius:12px;background:var(--vert-clair);color:var(--vert);display:grid;place-items:center;font-size:1.4rem"><i data-lucide="clock"></i></div>
                     <div><strong>{{ $libelle }}</strong></div>
                 </div>
             @endforeach
@@ -74,10 +74,10 @@
         <h2>Comment suivre ma livraison ?</h2>
         <p class="subtitle">À chaque étape, vous recevez une notification.</p>
         <div class="grid grid-4">
-            <div class="card feature"><div class="ico">✅</div><h3>1. Confirmée</h3><p>Votre commande est validée par la pharmacie.</p></div>
-            <div class="card feature bleu"><div class="ico">📦</div><h3>2. En préparation</h3><p>Vos médicaments sont rassemblés et vérifiés.</p></div>
-            <div class="card feature"><div class="ico">🛵</div><h3>3. Livreur en route</h3><p>Le livreur part avec votre commande (nom et téléphone affichés).</p></div>
-            <div class="card feature bleu"><div class="ico">🏠</div><h3>4. Livrée</h3><p>Vous recevez vos médicaments et payez à la réception.</p></div>
+            <div class="card feature"><div class="ico"><i data-lucide="check-circle"></i></div><h3>1. Confirmée</h3><p>Votre commande est validée par la pharmacie.</p></div>
+            <div class="card feature bleu"><div class="ico"><i data-lucide="package"></i></div><h3>2. En préparation</h3><p>Vos médicaments sont rassemblés et vérifiés.</p></div>
+            <div class="card feature"><div class="ico"><i class="fa-solid fa-motorcycle"></i></div><h3>3. Livreur en route</h3><p>Le livreur part avec votre commande (nom et téléphone affichés).</p></div>
+            <div class="card feature bleu"><div class="ico"><i data-lucide="home"></i></div><h3>4. Livrée</h3><p>Vous recevez vos médicaments et payez à la réception.</p></div>
         </div>
         <div class="text-center mt"><a href="{{ route('catalogue.index') }}" class="btn btn-primary">Commander maintenant</a></div>
     </div>

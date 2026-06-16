@@ -7,7 +7,7 @@
         <h1 class="mb">Mon panier</h1>
 
         @if($lignes->isEmpty())
-            <div class="empty"><div class="ico">🛒</div><p>Votre panier est vide.</p><a href="{{ route('catalogue.index') }}" class="btn btn-primary mt">Découvrir le catalogue</a></div>
+            <div class="empty"><div class="ico"><i data-lucide="shopping-cart"></i></div><p>Votre panier est vide.</p><a href="{{ route('catalogue.index') }}" class="btn btn-primary mt">Découvrir le catalogue</a></div>
         @else
             <div class="grid" style="grid-template-columns:2fr 1fr;gap:24px">
                 <div class="card">
@@ -33,7 +33,7 @@
                                         <td>
                                             <form method="POST" action="{{ route('panier.supprimer', $ligne['medicament']) }}">
                                                 @csrf @method('DELETE')
-                                                <button class="btn btn-danger btn-sm" type="submit">🗑️</button>
+                                                <button class="btn btn-danger btn-sm" type="submit"><i data-lucide="trash-2"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -55,7 +55,7 @@
                     <p class="help mb">Les frais de livraison seront calculés à l'étape suivante selon votre zone.</p>
 
                     @if($contientOrdonnance)
-                        <div class="alert alert-info">⚠️ Votre panier contient des médicaments sous ordonnance. Une ordonnance validée sera requise.</div>
+                        <div class="alert alert-info"><i data-lucide="alert-triangle"></i> Votre panier contient des médicaments sous ordonnance. Une ordonnance validée sera requise.</div>
                     @endif
 
                     @auth

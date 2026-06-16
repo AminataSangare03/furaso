@@ -2,7 +2,7 @@
 @section('title', $pharmacie->exists ? 'Modifier une pharmacie' : 'Nouvelle pharmacie')
 
 @section('content')
-<a href="{{ route('admin.pharmacies.index') }}" class="muted">← Retour</a>
+<a href="{{ route('admin.pharmacies.index') }}" class="muted"><i data-lucide="arrow-left"></i> Retour</a>
 <h1 class="mt">{{ $pharmacie->exists ? 'Modifier la pharmacie' : 'Nouvelle pharmacie' }}</h1>
 
 <div class="card card-pad" style="max-width:720px">

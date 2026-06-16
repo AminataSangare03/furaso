@@ -4,11 +4,11 @@
 @section('content')
 <section class="section">
     <div class="container">
-        <a href="{{ route('catalogue.index') }}" class="muted">← Retour au catalogue</a>
+        <a href="{{ route('catalogue.index') }}" class="muted"><i data-lucide="arrow-left"></i> Retour au catalogue</a>
         <div class="grid grid-2 mt">
             <div class="card" style="overflow:hidden">
                 <div class="thumb" style="height:320px;background:var(--vert-clair);display:grid;place-items:center;font-size:7rem;color:var(--vert)">
-                    @if($medicament->image)<img src="{{ asset('storage/'.$medicament->image) }}" alt="{{ $medicament->nom }}" style="height:100%;width:100%;object-fit:cover">@else 💊 @endif
+                    @if($medicament->image)<img src="{{ asset('storage/'.$medicament->image) }}" alt="{{ $medicament->nom }}" style="height:100%;width:100%;object-fit:cover">@else <i class="fa-solid fa-pills"></i> @endif
                 </div>
             </div>
             <div>
@@ -24,7 +24,7 @@
                 @if($medicament->description)<p class="mb">{{ $medicament->description }}</p>@endif
 
                 @if($medicament->ordonnance_obligatoire)
-                    <div class="alert alert-info">⚠️ Ce médicament nécessite une ordonnance valide. Envoyez votre ordonnance depuis votre espace patient.</div>
+                    <div class="alert alert-info"><i data-lucide="alert-triangle"></i> Ce médicament nécessite une ordonnance valide. Envoyez votre ordonnance depuis votre espace patient.</div>
                 @endif
 
                 <div class="flex gap wrap mt">
@@ -32,11 +32,11 @@
                         <form method="POST" action="{{ route('panier.ajouter', $medicament) }}" class="flex gap center">
                             @csrf
                             <input type="number" name="quantite" value="1" min="1" max="{{ $medicament->stock }}" style="width:80px">
-                            <button class="btn btn-primary" type="submit">🛒 Ajouter au panier</button>
+                            <button class="btn btn-primary" type="submit"><i data-lucide="shopping-cart"></i> Ajouter au panier</button>
                         </form>
                     @elseif($medicament->ordonnance_obligatoire)
                         @auth
-                            <a href="{{ route('patient.ordonnances.create') }}" class="btn btn-secondary">📄 Envoyer mon ordonnance</a>
+                            <a href="{{ route('patient.ordonnances.create') }}" class="btn btn-secondary"><i data-lucide="file-text"></i> Envoyer mon ordonnance</a>
                         @else
                             <a href="{{ route('login') }}" class="btn btn-secondary">Connectez-vous pour commander</a>
                         @endauth
@@ -45,7 +45,7 @@
                         @if(auth()->user()->isPatient())
                             <form method="POST" action="{{ route('patient.favoris.toggle', $medicament) }}">
                                 @csrf
-                                <button class="btn btn-outline" type="submit">⭐ Favori</button>
+                                <button class="btn btn-outline" type="submit"><i data-lucide="star"></i> Favori</button>
                             </form>
                         @endif
                     @endauth

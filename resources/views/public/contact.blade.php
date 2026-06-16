@@ -10,10 +10,10 @@
     <div class="container grid grid-2">
         <div class="card card-pad">
             <h3 class="mb">Coordonnées</h3>
-            <p class="mb">📞 <strong>Téléphone :</strong> +223 00 00 00 00</p>
-            <p class="mb">✉️ <strong>Email :</strong> contact@furaso.ml</p>
-            <p class="mb">💬 <strong>WhatsApp :</strong> +223 00 00 00 00</p>
-            <p class="mb">📍 <strong>Adresse :</strong> Bamako, Mali</p>
+            <p class="mb"><i data-lucide="phone"></i> <strong>Téléphone :</strong> +223 00 00 00 00</p>
+            <p class="mb"><i data-lucide="mail"></i> <strong>Email :</strong> contact@furaso.ml</p>
+            <p class="mb"><i data-lucide="message-circle"></i> <strong>WhatsApp :</strong> +223 00 00 00 00</p>
+            <p class="mb"><i data-lucide="map-pin"></i> <strong>Adresse :</strong> Bamako, Mali</p>
         </div>
         <div class="card card-pad">
             <h3 class="mb">Envoyez-nous un message</h3>

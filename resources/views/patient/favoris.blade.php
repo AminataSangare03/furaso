@@ -6,7 +6,7 @@
 <p class="page-sub">Retrouvez rapidement vos médicaments préférés.</p>
 
 @if($favoris->isEmpty())
-    <div class="empty"><div class="ico">⭐</div><p>Aucun favori pour l'instant.</p><a href="{{ route('catalogue.index') }}" class="btn btn-primary mt">Parcourir le catalogue</a></div>
+    <div class="empty"><div class="ico"><i data-lucide="star"></i></div><p>Aucun favori pour l'instant.</p><a href="{{ route('catalogue.index') }}" class="btn btn-primary mt">Parcourir le catalogue</a></div>
 @else
     <div class="grid grid-4">
         @foreach($favoris as $med)

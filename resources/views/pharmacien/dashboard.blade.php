@@ -6,15 +6,15 @@
 <p class="page-sub">Vue d'ensemble de l'activité de la pharmacie.</p>
 
 <div class="stats">
-    <div class="stat"><div class="ico">💊</div><div class="label">Médicaments</div><div class="value">{{ $nbMedicaments }}</div></div>
-    <div class="stat red"><div class="ico">⚠️</div><div class="label">Stock faible</div><div class="value">{{ $nbStockFaible }}</div></div>
-    <div class="stat yellow"><div class="ico">📄</div><div class="label">Ordonnances en attente</div><div class="value">{{ $nbOrdonnancesAttente }}</div></div>
-    <div class="stat blue"><div class="ico">📦</div><div class="label">Commandes</div><div class="value">{{ $nbCommandes }}</div></div>
+    <div class="stat"><div class="ico"><i class="fa-solid fa-pills"></i></div><div class="label">Médicaments</div><div class="value">{{ $nbMedicaments }}</div></div>
+    <div class="stat red"><div class="ico"><i data-lucide="alert-triangle"></i></div><div class="label">Stock faible</div><div class="value">{{ $nbStockFaible }}</div></div>
+    <div class="stat yellow"><div class="ico"><i data-lucide="file-text"></i></div><div class="label">Ordonnances en attente</div><div class="value">{{ $nbOrdonnancesAttente }}</div></div>
+    <div class="stat blue"><div class="ico"><i data-lucide="package"></i></div><div class="label">Commandes</div><div class="value">{{ $nbCommandes }}</div></div>
 </div>
 <div class="stats">
-    <div class="stat"><div class="ico">👥</div><div class="label">Patients</div><div class="value">{{ $nbPatients }}</div></div>
-    <div class="stat yellow"><div class="ico">🕓</div><div class="label">Commandes en attente</div><div class="value">{{ $nbCommandesAttente }}</div></div>
-    <div class="stat blue" style="grid-column:span 2"><div class="ico">💰</div><div class="label">Chiffre d'affaires</div><div class="value">{{ number_format($chiffreAffaires,0,',',' ') }} FCFA</div></div>
+    <div class="stat"><div class="ico"><i data-lucide="users"></i></div><div class="label">Patients</div><div class="value">{{ $nbPatients }}</div></div>
+    <div class="stat yellow"><div class="ico"><i data-lucide="clock"></i></div><div class="label">Commandes en attente</div><div class="value">{{ $nbCommandesAttente }}</div></div>
+    <div class="stat blue" style="grid-column:span 2"><div class="ico"><i class="fa-solid fa-sack-dollar"></i></div><div class="label">Chiffre d'affaires</div><div class="value">{{ number_format($chiffreAffaires,0,',',' ') }} FCFA</div></div>
 </div>
 
 <div class="grid grid-2">

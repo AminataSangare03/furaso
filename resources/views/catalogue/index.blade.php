@@ -7,7 +7,7 @@
         <h1>Catalogue des médicaments</h1>
         <form method="GET" action="{{ route('catalogue.index') }}" class="flex gap mt wrap">
             <input type="text" name="q" value="{{ $filtres['q'] ?? '' }}" placeholder="Rechercher par nom, maladie, laboratoire..." style="max-width:420px">
-            <button class="btn btn-primary" type="submit">🔍 Rechercher</button>
+            <button class="btn btn-primary" type="submit"><i data-lucide="search"></i> Rechercher</button>
         </form>
     </div>
 </section>
@@ -56,7 +56,7 @@
         <div>
             <p class="muted mb">{{ $medicaments->total() }} médicament(s) trouvé(s)</p>
             @if($medicaments->isEmpty())
-                <div class="empty"><div class="ico">💊</div><p>Aucun médicament ne correspond à votre recherche.</p></div>
+                <div class="empty"><div class="ico"><i class="fa-solid fa-pills"></i></div><p>Aucun médicament ne correspond à votre recherche.</p></div>
             @else
                 <div class="grid grid-3">
                     @foreach($medicaments as $med)

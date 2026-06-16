@@ -11,7 +11,7 @@
 </div>
 
 @if($notifications->isEmpty())
-    <div class="empty"><div class="ico">🔔</div><p>Aucune notification.</p></div>
+    <div class="empty"><div class="ico"><i data-lucide="bell"></i></div><p>Aucune notification.</p></div>
 @else
     <div class="card">
         @foreach($notifications as $notif)

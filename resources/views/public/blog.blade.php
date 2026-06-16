@@ -9,17 +9,17 @@
 <section class="section">
     <div class="container">
         @php($articles = [
-            ['🩸', 'Diabète', 'Comment gérer son diabète au quotidien : alimentation, suivi et traitements.'],
-            ['❤️', 'Hypertension', 'Prévenir et contrôler l\'hypertension artérielle naturellement.'],
-            ['🦟', 'Paludisme', 'Reconnaître les symptômes du paludisme et bien se protéger.'],
-            ['👩', 'Santé de la femme', 'Conseils santé essentiels pour les femmes à tout âge.'],
-            ['🥗', 'Nutrition', 'Bien manger pour une meilleure santé : les bases de la nutrition.'],
-            ['💊', 'Bon usage des médicaments', 'Comment bien prendre ses médicaments en toute sécurité.'],
+            ['<i class="fa-solid fa-droplet"></i>', 'Diabète', 'Comment gérer son diabète au quotidien : alimentation, suivi et traitements.'],
+            ['<i data-lucide="heart"></i>', 'Hypertension', 'Prévenir et contrôler l\'hypertension artérielle naturellement.'],
+            ['<i class="fa-solid fa-mosquito"></i>', 'Paludisme', 'Reconnaître les symptômes du paludisme et bien se protéger.'],
+            ['<i class="fa-solid fa-person-dress"></i>', 'Santé de la femme', 'Conseils santé essentiels pour les femmes à tout âge.'],
+            ['<i class="fa-solid fa-bowl-food"></i>', 'Nutrition', 'Bien manger pour une meilleure santé : les bases de la nutrition.'],
+            ['<i class="fa-solid fa-pills"></i>', 'Bon usage des médicaments', 'Comment bien prendre ses médicaments en toute sécurité.'],
         ])
         <div class="grid grid-3">
             @foreach($articles as $a)
                 <div class="card produit">
-                    <div class="thumb" style="font-size:3.5rem">{{ $a[0] }}</div>
+                    <div class="thumb" style="font-size:3.5rem">{!! $a[0] !!}</div>
                     <div class="body">
                         <span class="pill pill-green" style="align-self:flex-start">Santé</span>
                         <span class="nom">{{ $a[1] }}</span>

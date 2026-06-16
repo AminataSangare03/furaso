@@ -13,7 +13,7 @@
 </div>
 
 @if($commandes->isEmpty())
-    <div class="empty"><div class="ico">📦</div><p>Aucune commande.</p></div>
+    <div class="empty"><div class="ico"><i data-lucide="package"></i></div><p>Aucune commande.</p></div>
 @else
     <div class="card table-wrap">
         <table class="data">

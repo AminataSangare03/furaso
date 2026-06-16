@@ -15,7 +15,7 @@
 </div>
 
 @if($medicaments->isEmpty())
-    <div class="empty"><div class="ico">💊</div><p>Aucun médicament.</p></div>
+    <div class="empty"><div class="ico"><i class="fa-solid fa-pills"></i></div><p>Aucun médicament.</p></div>
 @else
     <div class="card table-wrap">
         <table class="data">

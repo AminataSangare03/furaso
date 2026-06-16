@@ -24,10 +24,10 @@
             </div>
             <div>
                 <h4>Contact</h4>
-                <a href="tel:+22300000000">📞 +223 00 00 00 00</a>
-                <a href="mailto:contact@furaso.ml">✉️ contact@furaso.ml</a>
-                <a href="#">💬 WhatsApp</a>
-                <a href="#">📍 Bamako, Mali</a>
+                <a href="tel:+22300000000"><i data-lucide="phone"></i> +223 00 00 00 00</a>
+                <a href="mailto:contact@furaso.ml"><i data-lucide="mail"></i> contact@furaso.ml</a>
+                <a href="#"><i data-lucide="message-circle"></i> WhatsApp</a>
+                <a href="#"><i data-lucide="map-pin"></i> Bamako, Mali</a>
             </div>
         </div>
         <div class="bottom">© {{ date('Y') }} Furaso — Tous droits réservés. Plateforme de pharmacie en ligne au Mali.</div>

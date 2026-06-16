@@ -13,7 +13,7 @@
 </div>
 
 @if($patients->isEmpty())
-    <div class="empty"><div class="ico">👥</div><p>Aucun patient.</p></div>
+    <div class="empty"><div class="ico"><i data-lucide="users"></i></div><p>Aucun patient.</p></div>
 @else
     <div class="card table-wrap">
         <table class="data">

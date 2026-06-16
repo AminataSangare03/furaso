@@ -2,7 +2,7 @@
 @section('title', 'Commande #'.$commande->id)
 
 @section('content')
-<a href="{{ route('patient.commandes.index') }}" class="muted">← Retour</a>
+<a href="{{ route('patient.commandes.index') }}" class="muted"><i data-lucide="arrow-left"></i> Retour</a>
 <div class="flex between center mt mb">
     <h1>Commande #{{ $commande->id }}</h1>
     <span class="pill {{ $commande->statut==='livree'?'pill-green':($commande->statut==='annulee'?'pill-red':'pill-yellow') }}">{{ $commande->statutLibelle() }}</span>
@@ -44,15 +44,15 @@
         </div>
         <div class="card card-pad mb">
             <h3 class="mb">Détails de livraison</h3>
-            <p class="muted">📍 {{ $commande->adresse_livraison }}</p>
-            <p class="muted">🏙️ Zone : {{ $commande->zone_livraison }}</p>
-            <p class="muted">🕒 Créneau : {{ \App\Services\LivraisonService::creneauLibelle($commande->creneau) }}</p>
-            <p class="muted">⏱️ Délai estimé : {{ \App\Services\LivraisonService::delaiPour($commande->zone_livraison) }}</p>
+            <p class="muted"><i data-lucide="map-pin"></i> {{ $commande->adresse_livraison }}</p>
+            <p class="muted"><i data-lucide="building-2"></i> Zone : {{ $commande->zone_livraison }}</p>
+            <p class="muted"><i data-lucide="clock"></i> Créneau : {{ \App\Services\LivraisonService::creneauLibelle($commande->creneau) }}</p>
+            <p class="muted"><i data-lucide="timer"></i> Délai estimé : {{ \App\Services\LivraisonService::delaiPour($commande->zone_livraison) }}</p>
             @if($commande->livraison && $commande->livraison->date_livraison_prevue)
-                <p class="muted">📅 Arrivée prévue : {{ $commande->livraison->date_livraison_prevue->format('d/m/Y à H:i') }}</p>
+                <p class="muted"><i data-lucide="calendar"></i> Arrivée prévue : {{ $commande->livraison->date_livraison_prevue->format('d/m/Y à H:i') }}</p>
             @endif
             @if($commande->livraison && $commande->livraison->livreur)
-                <p class="muted">🛵 Livreur : <strong>{{ $commande->livraison->livreur }}</strong>@if($commande->livraison->livreur_telephone) — {{ $commande->livraison->livreur_telephone }}@endif</p>
+                <p class="muted"><i class="fa-solid fa-motorcycle"></i> Livreur : <strong>{{ $commande->livraison->livreur }}</strong>@if($commande->livraison->livreur_telephone) — {{ $commande->livraison->livreur_telephone }}@endif</p>
             @endif
         </div>
         <div class="card card-pad mb">

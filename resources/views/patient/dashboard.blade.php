@@ -2,14 +2,14 @@
 @section('title', 'Mon espace')
 
 @section('content')
-<h1>Bonjour {{ $user->prenom }} 👋</h1>
+<h1>Bonjour {{ $user->prenom }} <i class="fa-solid fa-hand"></i></h1>
 <p class="page-sub">Bienvenue dans votre espace Furaso.</p>
 
 <div class="stats">
-    <div class="stat"><div class="ico">📦</div><div class="label">Commandes</div><div class="value">{{ $nbCommandes }}</div></div>
-    <div class="stat blue"><div class="ico">📄</div><div class="label">Ordonnances</div><div class="value">{{ $nbOrdonnances }}</div></div>
-    <div class="stat yellow"><div class="ico">⭐</div><div class="label">Favoris</div><div class="value">{{ $nbFavoris }}</div></div>
-    <div class="stat"><div class="ico">🔔</div><div class="label">Notifications</div><div class="value">{{ $notifications->count() }}</div></div>
+    <div class="stat"><div class="ico"><i data-lucide="package"></i></div><div class="label">Commandes</div><div class="value">{{ $nbCommandes }}</div></div>
+    <div class="stat blue"><div class="ico"><i data-lucide="file-text"></i></div><div class="label">Ordonnances</div><div class="value">{{ $nbOrdonnances }}</div></div>
+    <div class="stat yellow"><div class="ico"><i data-lucide="star"></i></div><div class="label">Favoris</div><div class="value">{{ $nbFavoris }}</div></div>
+    <div class="stat"><div class="ico"><i data-lucide="bell"></i></div><div class="label">Notifications</div><div class="value">{{ $notifications->count() }}</div></div>
 </div>
 
 <div class="grid grid-2">

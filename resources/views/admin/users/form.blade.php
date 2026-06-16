@@ -2,7 +2,7 @@
 @section('title', $user->exists ? 'Modifier un utilisateur' : 'Nouvel utilisateur')
 
 @section('content')
-<a href="{{ route('admin.users.index') }}" class="muted">← Retour</a>
+<a href="{{ route('admin.users.index') }}" class="muted"><i data-lucide="arrow-left"></i> Retour</a>
 <h1 class="mt">{{ $user->exists ? 'Modifier l\'utilisateur' : 'Nouvel utilisateur' }}</h1>
 
 <div class="card card-pad" style="max-width:720px">

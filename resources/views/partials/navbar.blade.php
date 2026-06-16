@@ -14,13 +14,13 @@
             <a href="{{ route('faq') }}" class="{{ request()->routeIs('faq') ? 'active' : '' }}">FAQ</a>
             <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
 
-            <a href="{{ route('panier.index') }}" title="Panier">🛒
+            <a href="{{ route('panier.index') }}" title="Panier"><i data-lucide="shopping-cart"></i>
                 @if($panier->nombreArticles() > 0)<span class="badge-count">{{ $panier->nombreArticles() }}</span>@endif
             </a>
 
             @auth
                 @php($nonLues = auth()->user()->notificationsFuraso()->where('lu', false)->count())
-                <a href="{{ route('notifications.index') }}" title="Notifications">🔔
+                <a href="{{ route('notifications.index') }}" title="Notifications"><i data-lucide="bell"></i>
                     @if($nonLues > 0)<span class="badge-count">{{ $nonLues }}</span>@endif
                 </a>
                 <a href="{{ route('dashboard') }}" class="btn btn-outline btn-sm">Mon espace</a>

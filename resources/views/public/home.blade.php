@@ -18,10 +18,10 @@
         <h2>Comment ça marche ?</h2>
         <p class="subtitle">Commander vos médicaments n'a jamais été aussi simple</p>
         <div class="grid grid-4">
-            <div class="card feature"><div class="ico">🔍</div><h3>1. Recherchez</h3><p>Trouvez vos médicaments dans notre catalogue complet.</p></div>
-            <div class="card feature bleu"><div class="ico">📷</div><h3>2. Envoyez l'ordonnance</h3><p>Prenez une photo ou téléversez un PDF de votre ordonnance.</p></div>
-            <div class="card feature"><div class="ico">🛒</div><h3>3. Commandez</h3><p>Validez votre panier et choisissez votre mode de paiement.</p></div>
-            <div class="card feature bleu"><div class="ico">🚚</div><h3>4. Livraison</h3><p>Recevez vos médicaments à domicile et suivez votre commande.</p></div>
+            <div class="card feature"><div class="ico"><i data-lucide="search"></i></div><h3>1. Recherchez</h3><p>Trouvez vos médicaments dans notre catalogue complet.</p></div>
+            <div class="card feature bleu"><div class="ico"><i data-lucide="camera"></i></div><h3>2. Envoyez l'ordonnance</h3><p>Prenez une photo ou téléversez un PDF de votre ordonnance.</p></div>
+            <div class="card feature"><div class="ico"><i data-lucide="shopping-cart"></i></div><h3>3. Commandez</h3><p>Validez votre panier et choisissez votre mode de paiement.</p></div>
+            <div class="card feature bleu"><div class="ico"><i data-lucide="truck"></i></div><h3>4. Livraison</h3><p>Recevez vos médicaments à domicile et suivez votre commande.</p></div>
         </div>
     </div>
 </section>
@@ -31,10 +31,10 @@
         <h2>Nos services</h2>
         <p class="subtitle">Tout ce dont vous avez besoin pour votre santé</p>
         <div class="grid grid-4">
-            <div class="card feature"><div class="ico">💊</div><h3>Achat de médicaments</h3><p>Médicaments avec ou sans ordonnance.</p></div>
-            <div class="card feature bleu"><div class="ico">📄</div><h3>Envoi d'ordonnance</h3><p>Validation par un pharmacien.</p></div>
-            <div class="card feature"><div class="ico">🏠</div><h3>Livraison à domicile</h3><p>Bamako et toutes les régions.</p></div>
-            <div class="card feature bleu"><div class="ico">💬</div><h3>Conseils pharmaceutiques</h3><p>Discutez avec un pharmacien.</p></div>
+            <div class="card feature"><div class="ico"><i class="fa-solid fa-pills"></i></div><h3>Achat de médicaments</h3><p>Médicaments avec ou sans ordonnance.</p></div>
+            <div class="card feature bleu"><div class="ico"><i data-lucide="file-text"></i></div><h3>Envoi d'ordonnance</h3><p>Validation par un pharmacien.</p></div>
+            <div class="card feature"><div class="ico"><i data-lucide="home"></i></div><h3>Livraison à domicile</h3><p>Bamako et toutes les régions.</p></div>
+            <div class="card feature bleu"><div class="ico"><i data-lucide="message-circle"></i></div><h3>Conseils pharmaceutiques</h3><p>Discutez avec un pharmacien.</p></div>
         </div>
     </div>
 </section>
@@ -62,7 +62,7 @@
         <div class="grid grid-4">
             @foreach($pharmacies as $ph)
                 <div class="card card-pad">
-                    <div class="ico" style="width:48px;height:48px;border-radius:10px;background:var(--vert-clair);color:var(--vert);display:grid;place-items:center;font-size:1.3rem;margin-bottom:10px">🏥</div>
+                    <div class="ico" style="width:48px;height:48px;border-radius:10px;background:var(--vert-clair);color:var(--vert);display:grid;place-items:center;font-size:1.3rem;margin-bottom:10px"><i class="fa-solid fa-hospital"></i></div>
                     <h3 style="font-size:1.05rem">{{ $ph->nom }}</h3>
                     <p class="muted">{{ $ph->ville }}, {{ $ph->region }}</p>
                 </div>

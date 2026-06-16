@@ -2,7 +2,7 @@
 @section('title', 'Patient')
 
 @section('content')
-<a href="{{ route('pharmacien.patients.index') }}" class="muted">← Retour</a>
+<a href="{{ route('pharmacien.patients.index') }}" class="muted"><i data-lucide="arrow-left"></i> Retour</a>
 <h1 class="mt">{{ $patient->user->nom_complet ?? '—' }}</h1>
 <p class="page-sub">{{ $patient->user->email }} · {{ $patient->user->telephone }}</p>
 
@@ -14,7 +14,7 @@
         <p class="muted">Groupe sanguin : {{ $patient->groupe_sanguin ?: '—' }}</p>
         <p class="muted">Adresse : {{ $patient->user->adresse }} {{ $patient->user->quartier }}, {{ $patient->user->ville }}</p>
         <p class="muted">Contact urgence : {{ $patient->personne_urgence ?: '—' }} ({{ $patient->telephone_urgence ?: '—' }})</p>
-        <a href="{{ route('messagerie.show', $patient->user) }}" class="btn btn-secondary btn-sm mt">💬 Envoyer un message</a>
+        <a href="{{ route('messagerie.show', $patient->user) }}" class="btn btn-secondary btn-sm mt"><i data-lucide="message-circle"></i> Envoyer un message</a>
     </div>
     <div class="card card-pad">
         <h3 class="mb">Ordonnances ({{ $patient->ordonnances->count() }})</h3>
