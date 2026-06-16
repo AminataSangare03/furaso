@@ -4,6 +4,7 @@
 @section('content')
 <div class="auth-wrap">
     <div class="card card-pad auth-card">
+        <div class="text-center mb"><img src="{{ asset('images/logo.jpg') }}" alt="Furaso" class="auth-logo"></div>
         <h2 class="text-center mb">Connexion</h2>
         <p class="text-center muted mb">Accédez à votre espace Furaso</p>
         <form method="POST" action="{{ route('login') }}">

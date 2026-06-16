@@ -2,7 +2,7 @@
 <nav class="navbar">
     <div class="container">
         <a href="{{ route('home') }}" class="brand">
-            <span class="leaf">✚</span> Fura<span class="bleu">so</span>
+            <img src="{{ asset('images/logo.jpg') }}" alt="Furaso — la maison du remède" class="brand-logo">
         </a>
         <div class="nav-links">
             <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Accueil</a>

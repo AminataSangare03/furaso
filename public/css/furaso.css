@@ -44,6 +44,8 @@ img { max-width: 100%; }
 .brand:hover { text-decoration: none; }
 .brand .leaf { width: 34px; height: 34px; background: var(--vert); color: #fff; border-radius: 9px; display: grid; place-items: center; font-size: 1.1rem; }
 .brand span.bleu { color: var(--bleu); }
+.brand-logo { height: 46px; width: auto; display: block; }
+.auth-logo { height: 70px; width: auto; }
 .nav-links { display: flex; gap: 6px; margin-left: auto; align-items: center; flex-wrap: wrap; }
 .nav-links a { color: var(--texte); padding: 8px 12px; border-radius: 8px; font-weight: 500; }
 .nav-links a:hover { background: var(--vert-clair); color: var(--vert-fonce); text-decoration: none; }

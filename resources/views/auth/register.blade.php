@@ -4,6 +4,7 @@
 @section('content')
 <div class="auth-wrap">
     <div class="card card-pad auth-card wide">
+        <div class="text-center mb"><img src="{{ asset('images/logo.jpg') }}" alt="Furaso" class="auth-logo"></div>
         <h2 class="text-center mb">Créer un compte patient</h2>
         <p class="text-center muted mb">Rejoignez Furaso et commandez vos médicaments en toute simplicité</p>
         <form method="POST" action="{{ route('register') }}">
